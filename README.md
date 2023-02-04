@@ -44,10 +44,10 @@ P(Y=1|X=1)=1.0
 ```
 No matter what word `X` is given, we predict that the next word will be `Y=1`. This prediction is only correct if we want to predict the next word given `X` by the expert. But it's not correct if we've generated the word `X`.
 
-We can fix this problem by treating the actions as a causal intervention using the do-operator.
+We can fix this problem by treating the actions as a causal intervention using the do-operator:
 ```Python
-P(Y=1|do(X)=0))=0.5
-P(Y=1|do(X)=1))=0.5
+P(Y=1|do(X=0))=0.5
+P(Y=1|do(X=1))=0.5
 ```
 
 ## Example based on natural language
